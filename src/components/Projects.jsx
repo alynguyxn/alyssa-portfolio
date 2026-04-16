@@ -1,22 +1,23 @@
 import React from 'react';
 
 function Projects() {
-  const myProjects = [
-    { 
-      title: "Order In The Coup", 
-      desc: "KnightHacks 2025 AI Project", 
-      img: "/src/assets/images/lily3.png" // Using an image I know you have!
-    },
-    { 
-      title: "MERN To-Do", 
-      desc: "Full-stack calendar app", 
-      img: "/src/assets/images/lily3.png" 
-    },
-    { 
-      title: "Portfolio", 
-      desc: "This pixel art website", 
-      img: "/src/assets/images/lily3.png" 
-    }
+  const projectList = [
+  {
+    name: "Order In The Coup",
+    // Note: No "public", no "src", no "assets" in the path!
+    img: "/images/lily2.png", 
+    desc: "Integrated Google Gemini AI to generate suggested actions from scanned documents."
+  },
+  {
+    name: "MERN To-Do List",
+    img: "/images/lily2.png",
+    desc: "A full-stack application with an event calendar developed using the MERN stack."
+  },
+  {
+    name: "Applied Machine Learning",
+    img: "/images/lily2.png",
+    desc: "Implementations of LeNet-5, K-Means clustering, and Q-learning algorithms."
+  }
   ];
 
   return (
