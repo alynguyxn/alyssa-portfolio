@@ -415,20 +415,22 @@ button:focus-visible {
 
 #projects {
   background-color: #FFFFFF !important; 
-  width: 100%; /* Changed from 100vw to 100% to stop the shifting */
   min-height: 80vh;
+  width: 100%; /* Changed to 100% to prevent the navy/white split */
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center; /* This centers the H2 and the Grid */
   justify-content: center;
   padding: 100px 0;
   margin: 0;
   box-sizing: border-box;
+  position: relative;
+  /* Removed the left: 50% and transform tricks that were breaking it */
 }
 
 #projects h2 {
   font-family: 'Dotemp', monospace !important;
-  color: #526798 !important; /* Your light blue */
+  color: #526798 !important; /* Your Light Blue */
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 40px;
@@ -437,10 +439,10 @@ button:focus-visible {
 
 .project-grid {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers the anchor/card horizontally */
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Limits the container size */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -463,12 +465,12 @@ button:focus-visible {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft base shadow */
 }
 
-/* Rise effect and grey shadow */
 .project-card-featured:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Grey lift shadow */
 }
 
 .project-image-container {
@@ -479,12 +481,13 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .project-image {
   width: auto;
   height: auto;
-  max-width: 55%; /* Slightly smaller for a cleaner look */
+  max-width: 55%; /* Smaller/not zoomed in */
   max-height: 55%;
   object-fit: contain; 
   image-rendering: pixelated;
@@ -502,7 +505,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   font-family: 'Dotemp', monospace;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -519,14 +522,15 @@ button:focus-visible {
 .project-info h3 {
   font-family: 'Dotemp', monospace !important;
   color: #253E77;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0 0 10px 0;
+  text-indent: 0;
 }
 
 .project-info p {
   font-family: 'VT323', monospace;
   font-size: 1.6rem;
-  color: #ffafdb !important; /* Consistent pink */
+  color: #ffafdb !important; /* Permanent pink */
   font-weight: bold;
   margin: 0;
 }
