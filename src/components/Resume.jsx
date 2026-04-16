@@ -1,10 +1,10 @@
 function Resume() {
   return (
     <section>
-      <h2>Resume</h2>
+      <h2>Résumé</h2>
 
       <div>
-        <p>Insert Resume Here</p>
+        <p>Insert Résume Here</p>
       </div>
     </section>
   );
