@@ -412,12 +412,36 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* projects */
-/* Container to help center the single large card */
+
+#projects {
+  background-color: #FFFFFF; /* Makes the whole section background white */
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the Title and the Grid/Card */
+}
+
+#projects h2 {
+  font-family: 'Dotemp', monospace !important;
+  color: #ff9dd3; /* Your pink title color */
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%; /* Ensures text-align center works across the whole page */
+}
+
 .project-grid {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers the card horizontally */
   width: 100%;
-  padding: 20px 0;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .project-card-link {
@@ -429,23 +453,38 @@ button:focus-visible {
   background: white;
   border: 2px solid #ffafdb;
   border-radius: 15px;
-  width: 800px; /* Makes it a wide rectangle */
-  max-width: 90%; /* Responsive for mobile */
+  width: 800px; 
+  max-width: 90%; 
   overflow: hidden;
+  /* Keep the rise effect and shadow transition */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .project-card-featured:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 175, 219, 0.3);
+  transform: translateY(-10px); /* The "Rise" effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtle grey shadow for the lift */
 }
 
 .project-image-container {
   position: relative;
   width: 100%;
-  height: 300px; /* Taller for the rectangle look */
+  height: 350px; 
+  background-color: #f9f9f9; /* Light grey background if image doesn't fill space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+}
+
+.project-image {
+  /* This fixes the "zoomed in" look */
+  width: auto;
+  max-width: 80%; /* Shrinks it so it's not touching the edges */
+  height: auto;
+  max-height: 80%;
+  object-fit: contain; /* Ensures the whole image is visible without cropping */
+  image-rendering: pixelated; /* Keeps your 8-bit aesthetic sharp */
 }
 
 .overlay-text {
@@ -454,7 +493,7 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(29, 45, 82, 0.6); /* Navy overlay */
+  background: rgba(29, 45, 82, 0.4); /* Slightly lighter navy overlay */
   color: white;
   display: flex;
   justify-content: center;
@@ -466,12 +505,28 @@ button:focus-visible {
 }
 
 .project-card-featured:hover .overlay-text {
-  opacity: 1;
+  opacity: 1; /* Keeps the grey/navy hover effect on the image */
 }
 
 .project-info {
-  padding: 20px;
+  padding: 25px;
   text-align: center;
+}
+
+.project-info h3 {
+  font-family: 'Dotemp', monospace !important;
+  color: #253E77;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Description text always pink and visible */
+.project-info p {
+  font-family: 'VT323', monospace;
+  font-size: 1.6rem;
+  color: #ffafdb; /* Always Pink */
+  font-weight: bold;
+  margin: 0;
 }
 
 /*----------------------------------------------------------------------------*/
