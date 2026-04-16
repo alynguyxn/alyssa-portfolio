@@ -414,39 +414,45 @@ button:focus-visible {
 /* projects */
 
 #projects {
-  background-color: #FFFFFF; /* Makes the whole section background white */
-  width: 100vw !important;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
-  padding: 100px 0;
+  background-color: #FFFFFF !important; /* Ensure absolute white */
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the Title and the Grid/Card */
+  align-items: center; /* Horizontally centers the children */
+  justify-content: center; /* Vertically centers the children */
+  padding: 0;
+  
+  /* --- THE CENTERING FIX --- */
+  width: 100vw !important;
+  position: relative;
+  left: 0px;
+  transform: translateX(-50%); /* This is a more reliable way to center 100vw sections */
+  margin: 0;
+  box-sizing: border-box;
 }
 
 #projects h2 {
   font-family: 'Dotemp', monospace !important;
-  color: #ff9dd3; /* Your pink title color */
+  color: #526798 !important;
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 40px;
-  width: 100%; /* Ensures text-align center works across the whole page */
+  width: 100%;
 }
 
 .project-grid {
   display: flex;
-  justify-content: center; /* Centers the card horizontally */
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .project-card-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  justify-content: center; /* Ensures the anchor itself is centered */
+  width: 100%;
 }
 
 .project-card-featured {
@@ -456,21 +462,22 @@ button:focus-visible {
   width: 800px; 
   max-width: 90%; 
   overflow: hidden;
-  /* Keep the rise effect and shadow transition */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card-featured:hover {
-  transform: translateY(-10px); /* The "Rise" effect */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtle grey shadow for the lift */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-image-container {
   position: relative;
   width: 100%;
   height: 350px; 
-  background-color: #f9f9f9; /* Light grey background if image doesn't fill space */
+  background-color: #fcfcfc; /* Very light grey to define the image area */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -478,13 +485,13 @@ button:focus-visible {
 }
 
 .project-image {
-  /* This fixes the "zoomed in" look */
+  /* This prevents the "zoomed in" look */
   width: auto;
-  max-width: 80%; /* Shrinks it so it's not touching the edges */
   height: auto;
-  max-height: 80%;
-  object-fit: contain; /* Ensures the whole image is visible without cropping */
-  image-rendering: pixelated; /* Keeps your 8-bit aesthetic sharp */
+  max-width: 70%; /* Adjust this to make the flower smaller/larger */
+  max-height: 70%;
+  object-fit: contain; 
+  image-rendering: pixelated;
 }
 
 .overlay-text {
@@ -493,7 +500,7 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(29, 45, 82, 0.4); /* Slightly lighter navy overlay */
+  background: rgba(29, 45, 82, 0.4); 
   color: white;
   display: flex;
   justify-content: center;
@@ -505,30 +512,30 @@ button:focus-visible {
 }
 
 .project-card-featured:hover .overlay-text {
-  opacity: 1; /* Keeps the grey/navy hover effect on the image */
+  opacity: 1;
 }
 
 .project-info {
   padding: 25px;
   text-align: center;
+  border-top: 1px solid #eee; /* Optional: subtle line between image and text */
 }
 
 .project-info h3 {
   font-family: 'Dotemp', monospace !important;
   color: #253E77;
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
+  text-indent: 0; /* Ensures no weird indents from global styles */
 }
 
-/* Description text always pink and visible */
 .project-info p {
   font-family: 'VT323', monospace;
   font-size: 1.6rem;
-  color: #ffafdb; /* Always Pink */
+  color: #ce639e !important; /* Forces pink color */
   font-weight: bold;
   margin: 0;
 }
-
 /*----------------------------------------------------------------------------*/
 
 /* resume */
