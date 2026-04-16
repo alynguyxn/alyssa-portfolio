@@ -412,94 +412,66 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* projects */
-#projects {
-  background-color: #FFFFFF;
-  color: #222;
-  min-height: 100vh;
-  
-  /* --- THE BALANCED BREAK-OUT --- */
-  width: 100vw !important;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  /* These must match exactly to center the section */
-  margin-left: -50vw !important; 
-  margin-right: -50vw !important;
-
-  /* --- THE GAP KILLER --- */
-  /* Pulls the white section up slightly to overlap the Navy section */
-  margin-top: -2px !important; 
-  /* ---------------------------- */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 0;
-  box-sizing: border-box;
-  
-  /* High z-index is good, but ensure 'about' doesn't have a higher one */
-  z-index: 5; 
-}
-#projects h2 {
-  font-family: 'Dotemp', monospace !important;
-  color: #ff9dd3;
-  font-size: 3.5rem;
-  text-align: center;
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-/* The Container for your 3 cards */
+/* Container to help center the single large card */
 .project-grid {
   display: flex;
-  flex-direction: row; /* Forces them to sit side-by-side */
   justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
   width: 100%;
-  max-width: 1100px; /* Keeps them from getting too spread out */
-  margin: 0 auto;
-  flex-wrap: wrap; /* Stacks them on mobile */
+  padding: 20px 0;
 }
 
-/* Individual Card Styling */
-.project-card {
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-featured {
   background: white;
   border: 2px solid #ffafdb;
   border-radius: 15px;
-  width: 300px;
+  width: 800px; /* Makes it a wide rectangle */
+  max-width: 90%; /* Responsive for mobile */
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
+.project-card-featured:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 175, 219, 0.3);
 }
 
-.project-image {
+.project-image-container {
+  position: relative;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 2px solid #ffafdb;
+  height: 300px; /* Taller for the rectangle look */
+  overflow: hidden;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 45, 82, 0.6); /* Navy overlay */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dotemp', monospace;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-featured:hover .overlay-text {
+  opacity: 1;
 }
 
 .project-info {
-  padding: 1.5rem;
-}
-
-.project-info h3 {
-  font-family: 'Dotemp', monospace !important;
-  color: #253E77;
-  margin: 0 0 10px 0;
-  text-indent: 0; /* Important: removes that global indent */
-}
-
-.project-info p {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-  color: #444;
+  padding: 20px;
+  text-align: center;
 }
 
 /*----------------------------------------------------------------------------*/
