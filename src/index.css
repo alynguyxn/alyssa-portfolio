@@ -433,6 +433,7 @@ button:focus-visible {
   padding: 100px 0;
   box-sizing: border-box;
   position: relative;
+  scroll-margin-top: 70px;
 }
 
 #projects h2 {
