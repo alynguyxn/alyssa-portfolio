@@ -491,8 +491,8 @@ button:focus-visible {
 .project-image {
   width: auto;
   height: auto;
-  max-width: 55%; /* Smaller/not zoomed in */
-  max-height: 55%;
+  max-width: 100%; /* Smaller/not zoomed in */
+  max-height: 100%;
   object-fit: contain; 
   image-rendering: pixelated;
 }
