@@ -31,11 +31,8 @@ function App() {
       </section>
       
       <About />
-      
-      <section id="projects">
-        <Projects />
-      </section>
-      
+      <Projects />
+
       <section id="resume">
         <Resume />
       </section>

@@ -414,26 +414,21 @@ button:focus-visible {
 /* projects */
 
 #projects {
-  background-color: #FFFFFF !important; /* Ensure absolute white */
+  background-color: #FFFFFF !important; 
+  width: 100%; /* Changed from 100vw to 100% to stop the shifting */
   min-height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Horizontally centers the children */
-  justify-content: center; /* Vertically centers the children */
-  padding: 0;
-  
-  /* --- THE CENTERING FIX --- */
-  width: 100vw !important;
-  position: relative;
-  left: 0px;
-  transform: translateX(-50%); /* This is a more reliable way to center 100vw sections */
+  align-items: center; 
+  justify-content: center;
+  padding: 100px 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 #projects h2 {
   font-family: 'Dotemp', monospace !important;
-  color: #526798 !important;
+  color: #526798 !important; /* Your light blue */
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 40px;
@@ -445,13 +440,15 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 1200px; /* Limits the container size */
+  margin: 0 auto;
 }
 
 .project-card-link {
   text-decoration: none;
   color: inherit;
   display: flex;
-  justify-content: center; /* Ensures the anchor itself is centered */
+  justify-content: center;
   width: 100%;
 }
 
@@ -468,28 +465,27 @@ button:focus-visible {
   flex-direction: column;
 }
 
+/* Rise effect and grey shadow */
 .project-card-featured:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
 }
 
 .project-image-container {
   position: relative;
   width: 100%;
   height: 350px; 
-  background-color: #fcfcfc; /* Very light grey to define the image area */
+  background-color: #fcfcfc;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .project-image {
-  /* This prevents the "zoomed in" look */
   width: auto;
   height: auto;
-  max-width: 70%; /* Adjust this to make the flower smaller/larger */
-  max-height: 70%;
+  max-width: 55%; /* Slightly smaller for a cleaner look */
+  max-height: 55%;
   object-fit: contain; 
   image-rendering: pixelated;
 }
@@ -506,7 +502,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   font-family: 'Dotemp', monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -518,21 +514,19 @@ button:focus-visible {
 .project-info {
   padding: 25px;
   text-align: center;
-  border-top: 1px solid #eee; /* Optional: subtle line between image and text */
 }
 
 .project-info h3 {
   font-family: 'Dotemp', monospace !important;
   color: #253E77;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0 0 10px 0;
-  text-indent: 0; /* Ensures no weird indents from global styles */
 }
 
 .project-info p {
   font-family: 'VT323', monospace;
   font-size: 1.6rem;
-  color: #ce639e !important; /* Forces pink color */
+  color: #ffafdb !important; /* Consistent pink */
   font-weight: bold;
   margin: 0;
 }
