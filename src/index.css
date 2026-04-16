@@ -548,25 +548,47 @@ button:focus-visible {
 
 /* resume */
 #resume {
-  background-color: #FFFFFF; /* Forces white background */
-  color: #222;               /* Dark text for readability */
-  min-height: 100vh;
-  max-width: 100% !important; 
-  width: 100%;
-  margin: 0rem;                /* Ensures no gap between Navy and White */
-  padding: px 0;
+  background-color: #FFFFFF !important;
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; 
-  z-index: 1;               /* Layers it above any bleeding effects */
-  scroll-margin-top: 70px; /* Aligns with navbar when scrolling */
 }
 
-/* Keep the project content inside your 1000px grid */
-#resume .section-content {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
+.resume-download {
+  margin-bottom: 30px;
+}
+
+.download-btn {
+  background-color: #ffafdb; /* Pink */
+  color: #1D2D52; /* Navy */
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Dotemp', monospace;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  border: 2px solid #ffafdb;
+}
+
+.download-btn:hover {
+  background-color: #FFFFFF;
+  color: #ffafdb;
+  transform: scale(1.05);
+}
+
+.resume-viewer {
+  width: 800px;
+  max-width: 90%;
+  border: 2px solid #526798; /* Light Blue border */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.resume-viewer iframe {
+  border: none;
 }
