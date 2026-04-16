@@ -416,20 +416,23 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* projects */
-
+/* projects */
 #projects {
   background-color: #FFFFFF !important; 
   min-height: 80vh;
-  width: 100%; /* Changed to 100% to prevent the navy/white split */
+  
+  /* --- ADD THESE THREE LINES --- */
+  width: 100vw !important;      /* Force it to viewport width */
+  max-width: none !important;   /* Override the 1000px global section limit */
+  margin: 0 !important;         /* Remove the auto margin */
+  
   display: flex;
   flex-direction: column;
-  align-items: center; /* This centers the H2 and the Grid */
+  align-items: center; 
   justify-content: center;
   padding: 100px 0;
-  margin: 0;
   box-sizing: border-box;
   position: relative;
-  /* Removed the left: 50% and transform tricks that were breaking it */
 }
 
 #projects h2 {
