@@ -373,7 +373,7 @@ button:focus-visible {
   /* We use rgba(37, 62, 119, 0.7) where 0.7 is the fade amount. (0 is transparent, 1 is solid navy) */
   background-image: 
     linear-gradient(rgba(37, 62, 119, 0.7), rgba(37, 62, 119, 0.7)), 
-    url('/src/assets/images/lily3.png'); /* Second image layer */
+    url('/images/lily3.png'); /* Second image layer */
   
   background-repeat: no-repeat;
   
