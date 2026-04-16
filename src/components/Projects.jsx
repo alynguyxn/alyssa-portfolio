@@ -1,40 +1,22 @@
-import React from 'react';
+// 1. Define the data (Make sure this name matches the map below!)
+const myProjects = [
+  { name: "Order In The Coup", img: "/images/lily2.png", desc: "..." },
+  { name: "MERN To-Do List", img: "/images/lily2.png", desc: "..." },
+  { name: "Applied Machine Learning", img: "/images/lily2.png", desc: "..." }
+];
 
-function Projects() {
-  const projectList = [
-  {
-    name: "Order In The Coup",
-    // Note: No "public", no "src", no "assets" in the path!
-    img: "/images/lily2.png", 
-    desc: "Integrated Google Gemini AI to generate suggested actions from scanned documents."
-  },
-  {
-    name: "MERN To-Do List",
-    img: "/images/lily2.png",
-    desc: "A full-stack application with an event calendar developed using the MERN stack."
-  },
-  {
-    name: "Applied Machine Learning",
-    img: "/images/lily2.png",
-    desc: "Implementations of LeNet-5, K-Means clustering, and Q-learning algorithms."
-  }
-  ];
-
+export default function Projects() {
   return (
     <section id="projects">
-      <h2>projects</h2>
-      
+      <h2>Projects</h2>
       <div className="project-grid">
+        {/* 2. Map through the EXACT name you used above */}
         {myProjects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <img 
-              src={project.img} 
-              className="project-image" 
-              alt={project.title} 
-            />
+          <div key={index} className="project-card">
+            <img src={project.img} className="project-image" />
             <div className="project-info">
-              <h3>{project.title}</h3>
-              <p>{project.desc}</p>
+               <h3>{project.name}</h3>
+               <p>{project.desc}</p>
             </div>
           </div>
         ))}
@@ -42,5 +24,3 @@ function Projects() {
     </section>
   );
 }
-
-export default Projects;
