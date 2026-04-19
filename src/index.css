@@ -1223,7 +1223,7 @@ button:focus-visible {
   align-items: center;
   
   /* Decreased from 280px to 100px to move text back toward the left */
-  transform: translateX(100px); 
+  transform: translateX(170px); 
   
   z-index: 10;
   position: relative;
