@@ -946,7 +946,7 @@ button:focus-visible {
   /* 2. MOVES EVERYTHING TO THE RIGHT: 
      The first number (100px) pushes it Right. 
      The second number (-20px) pulls it Up. */
-  transform: translate(35px, -100px); 
+  transform: translate(30px, -100px); 
   
   position: relative;
   z-index: 2; 
@@ -965,7 +965,7 @@ button:focus-visible {
 .about-text {
   max-width: 500px; /* Keeps text box tight so it doesn't wrap weirdly */
   text-align: left;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 #about h1 {
