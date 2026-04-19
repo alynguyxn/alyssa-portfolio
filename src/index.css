@@ -904,7 +904,6 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* about me */
-/* about me */
 #about {
   background-color: #253E77;
   color: #FFFFFF;
@@ -912,22 +911,24 @@ button:focus-visible {
   width: 100%;
   
   display: flex;
-  align-items: center; 
+  /* 1. Use flex-start and padding-top to manually "pin" it higher up */
+  align-items: flex-start; 
   justify-content: center;
   
-  /* 1. Added more bottom padding to nudge the content HIGHER */
-  padding: 100px 5% 120px 5%; 
+  /* 2. Adjusted padding: 12vh pulls it significantly higher on the page */
+  padding: 12vh 5% 0 5%; 
   box-sizing: border-box;
   scroll-margin-top: 70px;
 
-  /* 2. THE JELLYFISH: Faded background in the top right */
+  /* 3. THE JELLYFISH: Now fills the entire background of this section only */
   background-image: 
     linear-gradient(rgba(37, 62, 119, 0.75), rgba(37, 62, 119, 0.75)), 
     url('/images/jellyfish3.png');
   background-repeat: no-repeat;
-  background-position: top 5% right 5%; /* Pinned to top right */
-  background-size: 350px auto; /* Adjust size as needed */
+  background-position: center; /* Centered in the background */
+  background-size: cover;      /* Fills the whole #about section */
   image-rendering: pixelated; 
+  overflow: hidden;            /* Ensures no bleed */
 }
 
 .about-container {
@@ -936,13 +937,15 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   
-  /* 3. Increased gap to separate photo and text more */
   gap: 100px; 
-  
   max-width: 1200px;
-  width: 90%;
+  
+  /* 4. width: 100% and margin: auto ensures the unit is dead-center */
+  width: 100%;
+  margin: 0 auto;
+  
   position: relative;
-  z-index: 2; /* Keeps content above the jellyfish */
+  z-index: 2; 
 }
 
 .about-photo {
@@ -956,7 +959,8 @@ button:focus-visible {
 }
 
 .about-text {
-  flex: 1;
+  /* 5. Removed flex: 1 to prevent it from stretching unevenly */
+  max-width: 600px; 
   text-align: left;
 }
 
@@ -970,10 +974,7 @@ button:focus-visible {
 
 #about h3 {
   font-family: 'VT323', monospace !important;
-  
-  /* 4. Smaller font size for the description */
   font-size: 1.5rem; 
-  
   line-height: 1.5;
   color: #FFFFFF;
   text-indent: 40px;
