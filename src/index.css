@@ -546,49 +546,55 @@ button:focus-visible {
 }
 /*----------------------------------------------------------------------------*/
 
-/* resume */
 #resume {
   background-color: #FFFFFF !important;
   width: 100vw !important;
   max-width: none !important;
   margin: 0 !important;
-  padding: 40px 0;
+  
+  /* 1. Reduced top padding from 40px to 20px to close the gap */
+  padding: 20px 0 100px 0; 
+  
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  box-sizing: border-box;
+
+  /* 2. Keeps the section from hiding under the navbar */
+  scroll-margin-top: 70px; 
+}
+
+#resume h2 {
+  font-family: 'Dotemp', monospace !important;
+  color: #526798 !important; 
+  font-size: 3.5rem; 
+  text-align: center;
+  
+  /* 3. Tightened these margins to move the title up */
+  margin-top: 10px; 
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .resume-download {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .download-btn {
-  background-color: #ffafdb; /* Pink */
-  color: #1D2D52; /* Navy */
-  padding: 12px 24px;
+  background-color: #ffafdb;
+  color: #1D2D52;
+  
+  /* 4. Reduced padding and font-size to make the button smaller */
+  padding: 8px 18px; 
+  font-size: 1rem; 
+  
   border-radius: 8px;
   font-family: 'Dotemp', monospace;
   text-decoration: none;
-  font-size: 1.2rem;
   transition: transform 0.2s ease, background-color 0.2s ease;
   border: 2px solid #ffafdb;
+  display: inline-block;
 }
 
-.download-btn:hover {
-  background-color: #FFFFFF;
-  color: #ffafdb;
-  transform: scale(1.05);
-}
-
-.resume-viewer {
-  width: 800px;
-  max-width: 90%;
-  border: 2px solid #526798; /* Light Blue border */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.resume-viewer iframe {
-  border: none;
-}
+/* ... keep the rest of your hover and viewer styles ... */
