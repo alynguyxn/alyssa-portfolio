@@ -545,19 +545,446 @@ button:focus-visible {
 }
 /*----------------------------------------------------------------------------*/
 
-/* resume */
-#resume {
-  background-color: #FFFFFF !important;
-  width: 100vw !important;
-  max-width: none !important;
-  margin-bottom: 40px !important;
-  padding: 40px !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*----------------------------------------------------------------------------*/
+
+/*
+  COLORS:
+  dark blue(menu):    #1D2D52
+  dark blue(h1):      #253E77
+  light blue:         #526798
+  pink:               #ffafdb
+  white:              #FFFFFF
+*/
+
+/*----------------------------------------------------------------------------*/
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
-#resume h2 {
+/*----------------------------------------------------------------------------*/
+
+/* Import fonts */
+@font-face {
+  font-family: 'VT323';
+  src: url('/src/assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dotemp';
+  src: url('/src/assets/fonts/Dotemp-8bit.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* root vars & global styling */
+:root {
+  font-family: VT323, Dotemp, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgb(255, 255, 255);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* This is key for 100vw elements */
+  background-color: #253E77;
+  position: relative;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #1D2D52; /* Navy Blue */
+  color: white;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* This pushes name left and tabs right */
+  align-items: center;
+  width: 100%;
+  max-width: 95%; /* Increased from 1200px to take up more screen space */
+  margin: 0 auto;
+  padding: 0 40px; /* Added more padding so it doesn't literally touch the bezel */
+}
+
+/* Keep your Navbar logo as VT323 */
+.nav-logo h1 {
+  font-family: 'VT323', monospace;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.9;
+}
+
+  /* This targets the link wrapper for your name */
+.nav-logo a {
+  text-decoration: none;
+  color: inherit; /* Keeps it white by default */
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Allows transform to work properly */
+}
+
+/* Pink Hover Effect */
+.nav-logo h4:hover {
+  color: #ffafdb; /* Your pink accent color */
+}
+
+/* Adjusting the base size of the name in the bar */
+.nav-logo h3 {
+  font-family: 'Dotemp', monospace !important;
+  font-size: 1.4rem;
+  padding-top: 5px;
+  text-transform: lowercase;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* The White Oval Glow */
+.header-glow {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+    
+  width: 1400px; /* Made even wider to cover more pink */
+  height: 800px; 
+  
+  background: radial-gradient(
+    ellipse, 
+    rgba(255, 255, 255, 1) 0%,    /* Solid white core */
+    rgba(255, 255, 255, 0.9) 90%, /* Holds high brightness for 60% of the oval */
+    rgba(255, 255, 255, 0) 100%   /* Only fades out at the very last second */
+  );
+  border-radius: 50%;
+  
+  filter: blur(90px); /* Heavier blur for a more ethereal "dream" look */
+  z-index: 1; 
+  pointer-events: none;
+}
+
+/* header - Centering the text and oval together */
+header {
+  position: relative;
+  text-align: center;
+  color: #253E77; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  
+  min-height: 100vh; 
+  
+  /* --- THE "BREAK-OUT" TRICK --- */
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  /* ---------------------------- */
+
+  background-color: #ffdef0; 
+  overflow: hidden; 
+  box-sizing: border-box;
+}
+
+/* Ensure your text sits clearly on top of the light */
+header .typing-container, 
+header h2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* heading styling for titles */
+h1 {
+  font-family: 'Dotemp', 'Courier New', monospace !important;
+  color: #253E77;
+  font-size: 5rem;
+  margin: 0;
+  image-rendering: pixelated;
+  text-rendering: crisp-edges;
+  margin-top: 0; 
+  padding-top: 20px;
+}
+
+/* heading styling for sub heading */
+h2 {
+  font-family: 'Dotemp', 'Courier New', monospace !important;
+  color: #526798;
+  font-size: 2.3em;
+  margin: 0;
+  image-rendering: pixelated;
+  text-rendering: crisp-edges;
+}
+
+/* heading styling for paragraph text */
+h3 {
+  font-family: 'VT323', 'Courier New', monospace !important;
+  text-indent: 50px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+  image-rendering: pixelated;
+  text-rendering: crisp-edges;
+}
+
+/* heading styling for name in nav bar */
+h4 {
+  font-family: 'Dotemp', 'Courier New', monospace !important;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+  padding-top: 5px;
+  image-rendering: pixelated;
+  text-rendering: crisp-edges;
+}
+
+/* This targets the sub-text on main section */
+header p {
+  font-family: 'VT323', monospace; /* Keeping this VT323 looks clean */
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* section formatting */
+section {
+  max-width: 1000px;
+  min-height: 60vh;
+  margin: 0rem auto;
+  padding: 2rem;
+  
+  /* This creates a 'buffer' so the title doesn't sit under the navbar */
+  /* Since navbar is 70px, setting this to 100px gives it some breathing room */
+  scroll-margin-top: 100px; 
+}
+
+/*----------------------------------------------------------------------------*/
+
+  /* interactive elements */
+  /* link styling */
+a {
+  font-weight: 500;
+  color: #526798;
+  text-decoration: inherit;
+}
+
+/* link hover */
+a:hover {
+  color: #ffafdb;
+}
+
+/* button styling */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+/* button hover */
+button:hover {
+  border-color: #00054d;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* media queries */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #f3f3f3;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* typing effect */
+.typing-container {
+  display: inline-block;
+}
+
+.typing-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden; 
+  
+  /* Set the initial width to 0 characters */
+  width: 0; 
+
+  border-right: 10px solid #ffafdb;
+  padding-right: 0px; /* Tiny gap for the cursor */
+  box-sizing: content-box;
+
+  /* Change the 'to' width to exactly 13 characters (alyssa nguyen = 13) */
+  animation: 
+    typing 2s steps(13) forwards, 
+    blink 0.8s step-end infinite;
+}
+
+/* Update the keyframe to use 'ch' instead of '%' */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 13.2ch; } 
+}
+
+/* The Cursor Blink Effect */
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #ffafdb; } /* Pink cursor */
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* about me */
+#about {
+  background-color: #253E77; /* Your Dark Blue */
+  color: #FFFFFF;
+  min-height: 100vh;
+  max-width: 100% !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  padding-top: 8vh; 
+  margin: 0;
+  box-sizing: border-box;
+  scroll-margin-top: 70px;
+  margin-bottom: 0;
+  padding-bottom: 50px;
+
+  /* --- MULTIPLE BACKGROUND PROPERTIES --- */
+  
+  /* 1. The FADE: Add a semi-transparent navy gradient *first* (over the image) */
+  /* We use rgba(37, 62, 119, 0.7) where 0.7 is the fade amount. (0 is transparent, 1 is solid navy) */
+  background-image: 
+    linear-gradient(rgba(37, 62, 119, 0.7), rgba(37, 62, 119, 0.7)), 
+    url('/images/lily3.png'); /* Second image layer */
+  
+  background-repeat: no-repeat;
+  
+  /* 2. Positioning: Sets it on the right and at the bottom edge */
+  background-position: right 10% bottom 0; 
+  
+  /* 3. Larger Size: Use a percentage or specific pixel value */
+  background-size: contain, 550px auto; /* Increase this value (e.g., 550px) to make it larger */
+  
+  image-rendering: pixelated; 
+}
+
+#about .section-content {
+  max-width: 900px;
+  /* Adjust this percentage to line up with your Header text */
+  margin-left: 8%; 
+  padding: 1rem 2rem;
+  
+  /* aligns the lines of text to left*/
+  text-align: left; 
+}
+
+/* Force the headers to align left as well */
+#about h1, #about h2 {
+  color: #FFFFFF !important;
+  margin-top: 0; /* Prevents the heading from pushing the section down */
+  padding-top: 8rem; /* Use padding instead to create space */
+  text-align: left;
+  width: 100%;
+}
+
+#about h1 {
+  font-size: 3rem;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* projects */
+#projects {
+  background-color: #FFFFFF !important; 
+  min-height: 80vh;
+  
+  /* --- ADD THESE THREE LINES --- */
+  width: 100vw !important;      /* Force it to viewport width */
+  max-width: none !important;   /* Override the 1000px global section limit */
+  margin: 0 !important;         /* Remove the auto margin */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  padding: 50px 0;
+  box-sizing: border-box;
+  position: relative;
+  scroll-margin-top: 70px;
+}
+
+#projects h2 {
   font-family: 'Dotemp', monospace !important;
   color: #526798 !important; /* Your Light Blue */
   font-size: 3.5rem;
@@ -566,20 +993,153 @@ button:focus-visible {
   width: 100%;
 }
 
+.project-grid {
+  display: flex;
+  justify-content: center; /* Centers the anchor/card horizontally */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.project-card-featured {
+  background: white;
+  border: 2px solid #ffafdb;
+  border-radius: 15px;
+  width: 800px; 
+  max-width: 90%; 
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft base shadow */
+}
+
+.project-card-featured:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Grey lift shadow */
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 350px; 
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project-image {
+  width: auto;
+  height: auto;
+  max-width: 100%; /* Smaller/not zoomed in */
+  max-height: 100%;
+  object-fit: contain; 
+  image-rendering: pixelated;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 45, 82, 0.4); 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dotemp', monospace;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-featured:hover .overlay-text {
+  opacity: 1;
+}
+
+.project-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.project-info h3 {
+  font-family: 'Dotemp', monospace !important;
+  color: #253E77;
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  text-indent: 0;
+}
+
+.project-info p {
+  font-family: 'VT323', monospace;
+  font-size: 1.6rem;
+  color: #ffafdb !important; /* Permanent pink */
+  font-weight: bold;
+  margin: 0;
+}
+/*----------------------------------------------------------------------------*/
+
+/* resume */
+#resume {
+  background-color: #FFFFFF !important;
+  
+  /* --- THE SHIFT FIX --- */
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  /* ---------------------- */
+
+  max-width: none !important;
+  padding: 20px 0 100px 0 !important; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  scroll-margin-top: 70px; 
+}
+
+#resume h2 {
+  font-family: 'Dotemp', monospace !important;
+  color: #526798 !important; 
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 10px; 
+  margin-bottom: 25px;
+  width: 100%;
+}
+
 .resume-download {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .download-btn {
-  background-color: #ffafdb; /* Pink */
-  color: #1D2D52; /* Navy */
-  padding: 12px 24px;
+  background-color: #ffafdb;
+  color: #1D2D52;
+  padding: 8px 16px; 
   border-radius: 8px;
   font-family: 'Dotemp', monospace;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem; 
   transition: transform 0.2s ease, background-color 0.2s ease;
   border: 2px solid #ffafdb;
+  display: inline-block;
 }
 
 .download-btn:hover {
@@ -590,13 +1150,16 @@ button:focus-visible {
 
 .resume-viewer {
   width: 800px;
-  max-width: 90%;
-  border: 2px solid #526798; /* Light Blue border */
+  max-width: 95%; 
+  border: 2px solid #526798;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: 800px; 
 }
 
 .resume-viewer iframe {
   border: none;
+  width: 100%;
+  height: 100%;
 }
