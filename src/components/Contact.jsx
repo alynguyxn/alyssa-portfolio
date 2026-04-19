@@ -1,4 +1,6 @@
-return (
+
+function Contact() {
+  return (
     <section id="contact">
       {/* This new wrapper is the key for the CSS shifting! */}
       <div className="contact-container"> 
@@ -34,3 +36,4 @@ return (
       </div>
     </section>
   );
+}
