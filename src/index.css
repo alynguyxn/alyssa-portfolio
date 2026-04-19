@@ -1095,51 +1095,38 @@ button:focus-visible {
 /* resume */
 #resume {
   background-color: #FFFFFF !important;
-  
-  /* --- THE SHIFT FIX --- */
   width: 100vw !important;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
-  /* ---------------------- */
-
   max-width: none !important;
-  padding: 20px 0 100px 0 !important; 
+  margin-bottom: 40px !important;
+  padding: 40px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  scroll-margin-top: 70px; 
 }
 
 #resume h2 {
   font-family: 'Dotemp', monospace !important;
-  color: #526798 !important; 
+  color: #526798 !important; /* Your Light Blue */
   font-size: 3.5rem;
   text-align: center;
-  margin-top: 10px; 
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   width: 100%;
 }
 
 .resume-download {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .download-btn {
-  background-color: #ffafdb;
-  color: #1D2D52;
-  padding: 8px 16px; 
+  background-color: #ffafdb; /* Pink */
+  color: #1D2D52; /* Navy */
+  padding: 12px 24px;
   border-radius: 8px;
   font-family: 'Dotemp', monospace;
   text-decoration: none;
-  font-size: 1rem; 
+  font-size: 1.2rem;
   transition: transform 0.2s ease, background-color 0.2s ease;
   border: 2px solid #ffafdb;
-  display: inline-block;
 }
 
 .download-btn:hover {
@@ -1150,16 +1137,13 @@ button:focus-visible {
 
 .resume-viewer {
   width: 800px;
-  max-width: 95%; 
-  border: 2px solid #526798;
+  max-width: 90%;
+  border: 2px solid #526798; /* Light Blue border */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  height: 800px; 
 }
 
 .resume-viewer iframe {
   border: none;
-  width: 100%;
-  height: 100%;
 }
