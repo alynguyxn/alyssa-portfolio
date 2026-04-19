@@ -1,8 +1,18 @@
+import { useState } from 'react';
 
-function Contact() {
+export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = "lyssbliss610@gmail.com";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset message after 2s
+  };
+
+  /* The return MUST be inside the function brackets */
   return (
     <section id="contact">
-      {/* This new wrapper is the key for the CSS shifting! */}
       <div className="contact-container"> 
         <h2>contact me</h2>
         <div className="contact-links">
@@ -36,4 +46,4 @@ function Contact() {
       </div>
     </section>
   );
-}
+} // Don't forget this closing bracket!
