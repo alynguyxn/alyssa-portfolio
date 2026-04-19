@@ -916,7 +916,7 @@ button:focus-visible {
   justify-content: center;
   
   /* 1. Added more bottom padding to nudge the content HIGHER */
-  padding: 70px 5% 120px 5%; 
+  padding: 100px 5% 120px 5%; 
   box-sizing: border-box;
   scroll-margin-top: 70px;
 
