@@ -1215,20 +1215,22 @@ button:focus-visible {
   z-index: 1;
   overflow: hidden; 
 
-  /* --- THE LILY OVERHAUL --- */
-  /* We use !important here to force the move from Right to Left */
+  /* Update this section specifically */
   background-image: 
     linear-gradient(rgba(37, 62, 119, 0.8), rgba(37, 62, 119, 0.8)), 
     url('/images/lily3.png') !important;
-  background-repeat: no-repeat !important;
+
+  /* 1. Explicitly tell BOTH the gradient and the image not to repeat */
+  background-repeat: no-repeat, no-repeat !important;
   
-  /* Forces it to the left side */
-  background-position: left -5% center !important; 
+  /* 2. Using 'contain' can sometimes help prevent weird tiling artifacts */
+  background-size: auto, 650px auto !important; 
   
-  /* Makes it much larger (adjust 600px if needed) */
-  background-size: 550px auto !important; 
-  
+  /* 3. Ensure it's pinned to the left and vertically centered */
+  background-position: center, left -50px center !important; 
+
   image-rendering: pixelated;
+  overflow: hidden;
 }
 
 /* CONTAINER SHIFT: This pushes the text unit to the right side */
