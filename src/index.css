@@ -1209,40 +1209,22 @@ button:focus-visible {
   padding: 0 20px; 
   box-sizing: border-box;
   scroll-margin-top: 70px;
-  position: relative; /* This is crucial for the phantom Lily */
+  position: relative; 
   z-index: 1;
   overflow: hidden; 
+  /* Removed background images from here entirely */
 }
 
-/* THE PHANTOM LILY (Pseudo-element) */
-#contact::before {
-  content: "";
-  position: absolute;
-  /* Adjust 'left' to move it further off-screen or on-screen */
-  left: -50px; 
-  top: 50%;
-  transform: translateY(-50%);
-  width: 600px;
-  height: 600px;
-  
-  background-image: url('/images/lily3.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  
-  /* This creates the "faded" look without using a gradient layer */
-  opacity: 0.2; 
-  
-  image-rendering: pixelated;
-  z-index: -1; /* Puts it behind your text */
-  pointer-events: none; /* Makes it so you can't click it */
-}
+/* DELETE the #contact::before block entirely! */
 
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateX(250px); 
+  /* Adjust this to push your text further right if the Lily is too close */
+  transform: translateX(280px); 
   z-index: 10;
+  position: relative;
 }
 
 #contact h2 {
@@ -1252,6 +1234,8 @@ button:focus-visible {
   margin-top: 0;
   margin-bottom: 40px;
 }
+
+/* ... keep the rest of your contact-links and contact-item styles ... */
 
 .contact-links {
   display: flex;
