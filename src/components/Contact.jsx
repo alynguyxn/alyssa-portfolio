@@ -23,7 +23,7 @@ export default function Contact() {
 
         {/* LinkedIn */}
         <a 
-          href="https://www.linkedin.com/in/your-profile" 
+          href="https://www.linkedin.com/in/alyssa-nguyen610/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="contact-item"
@@ -33,7 +33,7 @@ export default function Contact() {
 
         {/* GitHub */}
         <a 
-          href="https://github.com/your-username" 
+          href="https://github.com/alynguyxn" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="contact-item"
