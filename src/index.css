@@ -1114,6 +1114,9 @@ button:focus-visible {
   scroll-margin-top: 70px; 
   box-sizing: border-box;
   position: relative;
+
+  margin-bottom: 0 !important;
+  padding-bottom: 80px !important;
 }
 
 #resume h2 {
@@ -1165,4 +1168,56 @@ button:focus-visible {
   border: none;
   width: 100%;
   height: 100%;
+}
+
+/* contact */
+#contact {
+  background-color: #253E77; /* Navy Blue */
+  min-height: 40vh;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  box-sizing: border-box;
+  scroll-margin-top: 70px;
+}
+
+#contact h2 {
+  font-family: 'Dotemp', monospace !important;
+  color: #FFFFFF !important; /* White as requested */
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-item {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  color: #ffafdb; /* Pink accent */
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: scale(1.1);
+  color: #FFFFFF;
+}
+
+/* Tooltip style for "Copied!" message */
+.copy-feedback {
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin-top: 5px;
+  opacity: 0.8;
 }
