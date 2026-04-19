@@ -19,12 +19,12 @@ export default function Contact() {
         alt=""
         style={{
           position: 'absolute',
-          left: '-100px',     // Pulls it slightly left
-          bottom: '0',        // Touches the bottom
-          height: '115%',     // Makes it MASSIVE
+          left: '20px',        // Changed from -100px to 20px to bring it on-screen
+          bottom: '0',
+          height: '115%',
           width: 'auto',
-          opacity: '0.2',     // Fades it into the navy
-          zIndex: '0',        // Sits behind the text
+          opacity: '0.2',
+          zIndex: '0',
           pointerEvents: 'none',
           imageRendering: 'pixelated',
           objectFit: 'contain',
