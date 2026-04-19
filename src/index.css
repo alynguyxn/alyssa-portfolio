@@ -916,14 +916,14 @@ button:focus-visible {
   justify-content: center;
   
   /* 1. Added more bottom padding to nudge the content HIGHER */
-  padding: 40px 5% 120px 5%; 
+  padding: 70px 5% 120px 5%; 
   box-sizing: border-box;
   scroll-margin-top: 70px;
 
   /* 2. THE JELLYFISH: Faded background in the top right */
   background-image: 
     linear-gradient(rgba(37, 62, 119, 0.75), rgba(37, 62, 119, 0.75)), 
-    url('/images/jellyfish2.png');
+    url('/images/jellyfish3.png');
   background-repeat: no-repeat;
   background-position: top 5% right 5%; /* Pinned to top right */
   background-size: 350px auto; /* Adjust size as needed */
