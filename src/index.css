@@ -1223,10 +1223,10 @@ button:focus-visible {
   background-repeat: no-repeat !important;
   
   /* Forces it to the left side */
-  background-position: left -50px center !important; 
+  background-position: left -5% center !important; 
   
   /* Makes it much larger (adjust 600px if needed) */
-  background-size: 650px auto !important; 
+  background-size: 550px auto !important; 
   
   image-rendering: pixelated;
 }
