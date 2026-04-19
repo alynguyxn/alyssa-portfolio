@@ -909,28 +909,25 @@ button:focus-visible {
   background-color: #253E77;
   color: #FFFFFF;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw !important; /* Force full viewport width */
+  max-width: none !important;
   
   display: flex;
-  /* 1. Aligns items to the top so we can control exactly how high they are */
-  align-items: flex-start; 
+  align-items: flex-start; /* Keeps it high */
   justify-content: center;
   
-  /* 2. Reduced top padding significantly to 60px to move it HIGHER */
-  padding: 60px 5% 0 5%; 
+  padding: 0; /* Resetting padding to control it via margin-top */
   box-sizing: border-box;
-  
-  /* 3. Lands the scroll perfectly at the navbar bottom */
   scroll-margin-top: 70px;
+  position: relative;
+  overflow: hidden;
 
-  /* 4. THE JELLYFISH: Faded, large, but pinned to the right */
+  /* JELLYFISH: Perfectly pinned */
   background-image: 
     linear-gradient(rgba(37, 62, 119, 0.8), rgba(37, 62, 119, 0.8)), 
     url('/images/jellyfish3.png');
   background-repeat: no-repeat;
-  /* Positions it on the right side, about 10% down from the top */
   background-position: right 5% top 10%; 
-  /* Makes it large (600px) without covering the whole screen like 'cover' did */
   background-size: 600px auto; 
   image-rendering: pixelated; 
 }
@@ -941,17 +938,22 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 100px; 
-  max-width: 1200px;
   width: 100%;
   
-  /* 5. Pulls the whole container up even further */
-  margin-top: 20px; 
+  /* 1. MOVES EVERYTHING UP: Small top margin starts it high */
+  margin-top: 80px; 
+  
+  /* 2. MOVES EVERYTHING TO THE RIGHT: 
+     The first number (100px) pushes it Right. 
+     The second number (-20px) pulls it Up. */
+  transform: translate(100px, -20px); 
+  
   position: relative;
   z-index: 2; 
 }
 
 .about-photo {
-  width: 320px; /* Slightly smaller to help it sit higher */
+  width: 320px;
   height: 420px;
   object-fit: cover;
   border: 4px solid #ffafdb;
@@ -961,14 +963,14 @@ button:focus-visible {
 }
 
 .about-text {
-  max-width: 550px; 
+  max-width: 500px; /* Keeps text box tight so it doesn't wrap weirdly */
   text-align: left;
 }
 
 #about h1 {
   font-family: 'Dotemp', monospace !important;
   color: #FFFFFF !important;
-  font-size: 3.2rem; /* Slightly smaller to save space */
+  font-size: 3.2rem;
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -981,7 +983,6 @@ button:focus-visible {
   text-indent: 40px;
   text-align: left;
 }
-
 /*----------------------------------------------------------------------------*/
 
 /* projects */
