@@ -7,23 +7,20 @@ export default function Contact() {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset message after 2s
+    setTimeout(() => setCopied(false), 2000); 
   };
 
-  /* The return MUST be inside the function brackets */
   return (
     <section id="contact">
       <div className="contact-container"> 
         <h2>contact me</h2>
         <div className="contact-links">
           
-          {/* Email with Copy Function */}
           <div onClick={copyToClipboard} className="contact-item">
             {email}
             {copied && <div className="copy-feedback">Copied to clipboard!</div>}
           </div>
 
-          {/* LinkedIn */}
           <a 
             href="https://www.linkedin.com/in/alyssa-nguyen610/" 
             target="_blank" 
@@ -33,7 +30,6 @@ export default function Contact() {
             LinkedIn
           </a>
 
-          {/* GitHub */}
           <a 
             href="https://github.com/alynguyxn" 
             target="_blank" 
@@ -46,4 +42,4 @@ export default function Contact() {
       </div>
     </section>
   );
-} // Don't forget this closing bracket!
+}
