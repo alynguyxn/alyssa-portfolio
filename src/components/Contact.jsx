@@ -11,35 +11,31 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact">
-      <div className="contact-container"> 
-        <h2>contact me</h2>
-        <div className="contact-links">
-          
-          <div onClick={copyToClipboard} className="contact-item">
-            {email}
-            {copied && <div className="copy-feedback">Copied to clipboard!</div>}
-          </div>
+  <section id="contact" style={{ position: 'relative', overflow: 'hidden' }}>
+    
+    {/* THE LILY AS A REAL IMAGE (Impossible to repeat) */}
+    <img 
+      src="/images/lily3.png" 
+      alt=""
+      style={{
+        position: 'absolute',
+        left: '-100px', // Pulls it slightly off-screen to the left
+        top: '50%',
+        transform: 'translateY(-50%)',
+        height: '80%', // Makes it BIG
+        opacity: '0.2',
+        zIndex: '0',
+        pointerEvents: 'none',
+        imageRendering: 'pixelated'
+      }}
+    />
 
-          <a 
-            href="https://www.linkedin.com/in/alyssa-nguyen610/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="contact-item"
-          >
-            LinkedIn
-          </a>
-
-          <a 
-            href="https://github.com/alynguyxn" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="contact-item"
-          >
-            GitHub
-          </a>
-        </div>
+    <div className="contact-container"> 
+      <h2>contact me</h2>
+      <div className="contact-links">
+        {/* ... your email and links ... */}
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
