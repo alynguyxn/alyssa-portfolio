@@ -1,5 +1,5 @@
 export default function Resume() {
-  const resumePath = "/Alyssa_Nguyen_Resume_2026.pdf"; // Path from the public folder
+  const resumePath = "/AN_Resume.pdf"; // Path from the public folder
 
   return (
     <section id="resume">
@@ -7,7 +7,7 @@ export default function Resume() {
       
       {/* 1. The Download Button */}
       <div className="resume-download">
-        <a href={resumePath} download="Alyssa_Nguyen_Resume_2026.pdf" className="download-btn">
+        <a href={resumePath} download="AN_Resume.pdf" className="download-btn">
           Download PDF
         </a>
       </div>
