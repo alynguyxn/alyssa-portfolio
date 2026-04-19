@@ -11,7 +11,27 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" style={{ position: 'relative', overflow: 'hidden' }}>
+      
+      {/* THE LILY: Real image tag to prevent doubling */}
+      <img 
+        src="/images/lily3.png" 
+        alt=""
+        style={{
+          position: 'absolute',
+          left: '-100px',     // Pulls it slightly left
+          bottom: '0',        // Touches the bottom
+          height: '115%',     // Makes it MASSIVE
+          width: 'auto',
+          opacity: '0.2',     // Fades it into the navy
+          zIndex: '0',        // Sits behind the text
+          pointerEvents: 'none',
+          imageRendering: 'pixelated',
+          objectFit: 'contain',
+          objectPosition: 'bottom left'
+        }}
+      />
+
       <div className="contact-container"> 
         <h2>contact me</h2>
         <div className="contact-links">
