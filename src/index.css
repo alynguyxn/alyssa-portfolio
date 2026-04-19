@@ -1116,6 +1116,7 @@ button:focus-visible {
 
   margin-bottom: 0 !important;
   padding-bottom: 80px !important;
+  border: none !important;
 }
 
 #resume h2 {
@@ -1172,21 +1173,30 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* contact */
+/* contact */
 #contact {
-  background-color: #253E77; /* Navy Blue */
-  min-height: 40vh;
+  background-color: #253E77 !important; /* Navy Blue */
+  
+  /* 1. Makes the section fill the entire screen */
+  min-height: 100vh; 
+  
   width: 100% !important;
   max-width: none !important;
-  margin: 0 !important;
+  
+  /* 2. THE GAP KILLER: Pulls this section up by 1px to overlap the resume section */
+  margin-top: -1px !important; 
+  margin-bottom: 0 !important;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Centers the content vertically in that 100vh */
+  
   padding: 80px 20px;
   box-sizing: border-box;
   scroll-margin-top: 70px;
-  margin-bottom: 0 !important;
-  padding-bottom: 80px !important;
+  position: relative;
+  z-index: 1;
 }
 
 #contact h2 {
