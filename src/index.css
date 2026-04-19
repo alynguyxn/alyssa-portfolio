@@ -1228,8 +1228,6 @@ button:focus-visible {
   
   /* Makes it much larger (adjust 600px if needed) */
   background-size: 650px auto !important; 
-  
-  image-rendering: pixelated;
 }
 
 /* CONTAINER SHIFT: This pushes the text unit to the right side */
