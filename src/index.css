@@ -946,7 +946,7 @@ button:focus-visible {
   /* 2. MOVES EVERYTHING TO THE RIGHT: 
      The first number (100px) pushes it Right. 
      The second number (-20px) pulls it Up. */
-  transform: translate(100px, -20px); 
+  transform: translate(70px, -50px); 
   
   position: relative;
   z-index: 2; 
