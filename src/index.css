@@ -418,7 +418,6 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* projects */
-/* projects */
 #projects {
   background-color: #FFFFFF !important; 
   min-height: 80vh;
@@ -551,11 +550,20 @@ button:focus-visible {
   background-color: #FFFFFF !important;
   width: 100vw !important;
   max-width: none !important;
-  margin: 0 !important;
-  padding: 40px 0;
+  margin-bottom: 40px !important;
+  padding: 40px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#resume h2 {
+  font-family: 'Dotemp', monospace !important;
+  color: #526798 !important; /* Your Light Blue */
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .resume-download {
