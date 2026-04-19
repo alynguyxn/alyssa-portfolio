@@ -1202,42 +1202,46 @@ button:focus-visible {
   max-width: none !important;
   margin-top: -1px !important; 
   margin-bottom: 0 !important;
-  
   display: flex;
-  flex-direction: row; /* Change to row to handle Lily vs Text */
+  flex-direction: column;
   align-items: center;
   justify-content: center; 
-
-  padding: 0 10%; 
+  padding: 0 20px; 
   box-sizing: border-box;
   scroll-margin-top: 70px;
-  position: relative;
+  position: relative; /* This is crucial for the phantom Lily */
   z-index: 1;
   overflow: hidden; 
-
-  /* 1. Use the shorthand 'background' to force no-repeat on all layers */
-  background: 
-    linear-gradient(rgba(37, 62, 119, 0.8), rgba(37, 62, 119, 0.8)), 
-    url('/images/lily3.png') left -50px center / 600px auto no-repeat !important;
-
-  /* 2. Backup safety rules */
-  background-repeat: no-repeat !important;
-  background-attachment: local; /* Prevents the image from "bleeding" while scrolling */
-  
-  image-rendering: pixelated;
-  overflow: hidden;
 }
 
-/* CONTAINER SHIFT: This pushes the text unit to the right side */
+/* THE PHANTOM LILY (Pseudo-element) */
+#contact::before {
+  content: "";
+  position: absolute;
+  /* Adjust 'left' to move it further off-screen or on-screen */
+  left: -50px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  
+  background-image: url('/images/lily3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  /* This creates the "faded" look without using a gradient layer */
+  opacity: 0.2; 
+  
+  image-rendering: pixelated;
+  z-index: -1; /* Puts it behind your text */
+  pointer-events: none; /* Makes it so you can't click it */
+}
+
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* 1. We use a larger translateX to move it away from the giant Lily */
   transform: translateX(250px); 
-  
-  /* 2. Added a z-index to ensure it sits on top of everything */
   z-index: 10;
 }
 
