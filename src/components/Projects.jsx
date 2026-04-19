@@ -3,7 +3,7 @@ export default function Projects() {
 
   return (
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>projects</h2>
       <div className="project-grid">
         {/* We use an <a> tag to make the whole card clickable */}
         <a href={notionUrl} target="_blank" rel="noopener noreferrer" className="project-card-link">

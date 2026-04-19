@@ -3,7 +3,7 @@ export default function Resume() {
 
   return (
     <section id="resume">
-      <h2>Resume</h2>
+      <h2>resume</h2>
       
       {/* 1. The Download Button */}
       <div className="resume-download">

@@ -12,7 +12,7 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>contact me</h2>
       <div className="contact-links">
         
         {/* Email with Copy Function */}
