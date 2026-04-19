@@ -1195,45 +1195,54 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* contact */
+/* contact */
 #contact {
   background-color: #253E77 !important;
   height: calc(100vh - 70px); 
-  width: 100% !important;
+  width: 100vw !important;
   max-width: none !important;
   margin-top: -1px !important; 
   margin-bottom: 0 !important;
   
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Change to row to handle Lily vs Text */
   align-items: center;
   justify-content: center; 
 
-  padding: 0 20px; 
+  padding: 0 10%; 
   box-sizing: border-box;
   scroll-margin-top: 70px;
   position: relative;
   z-index: 1;
   overflow: hidden; 
 
-  /* 1. THE LILY: Faded, larger, and pinned to the LEFT */
+  /* --- THE LILY OVERHAUL --- */
+  /* We use !important here to force the move from Right to Left */
   background-image: 
     linear-gradient(rgba(37, 62, 119, 0.8), rgba(37, 62, 119, 0.8)), 
-    url('/images/lily3.png');
-  background-repeat: no-repeat;
-  /* Positions the lily on the left side, slightly above the bottom */
-  background-position: left 10% bottom 15%; 
-  /* Made it bigger as requested */
-  background-size: 500px auto; 
+    url('/images/lily3.png') !important;
+  background-repeat: no-repeat !important;
+  
+  /* Forces it to the left side */
+  background-position: left -50px center !important; 
+  
+  /* Makes it much larger (adjust 600px if needed) */
+  background-size: 650px auto !important; 
+  
   image-rendering: pixelated;
 }
 
-/* 2. CONTAINER SHIFT: This pushes the text unit to the right */
+/* CONTAINER SHIFT: This pushes the text unit to the right side */
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Adjust 200px to move it further right or left */
-  transform: translateX(200px); 
+  
+  /* 1. We use a larger translateX to move it away from the giant Lily */
+  transform: translateX(250px); 
+  
+  /* 2. Added a z-index to ensure it sits on top of everything */
+  z-index: 10;
 }
 
 #contact h2 {
