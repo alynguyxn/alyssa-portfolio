@@ -1215,20 +1215,15 @@ button:focus-visible {
   z-index: 1;
   overflow: hidden; 
 
-  /* Update this section specifically */
-  background-image: 
+  /* 1. Use the shorthand 'background' to force no-repeat on all layers */
+  background: 
     linear-gradient(rgba(37, 62, 119, 0.8), rgba(37, 62, 119, 0.8)), 
-    url('/images/lily3.png') !important;
+    url('/images/lily3.png') left -50px center / 600px auto no-repeat !important;
 
-  /* 1. Explicitly tell BOTH the gradient and the image not to repeat */
-  background-repeat: no-repeat, no-repeat !important;
+  /* 2. Backup safety rules */
+  background-repeat: no-repeat !important;
+  background-attachment: local; /* Prevents the image from "bleeding" while scrolling */
   
-  /* 2. Using 'contain' can sometimes help prevent weird tiling artifacts */
-  background-size: auto, 650px auto !important; 
-  
-  /* 3. Ensure it's pinned to the left and vertically centered */
-  background-position: center, left -50px center !important; 
-
   image-rendering: pixelated;
   overflow: hidden;
 }
