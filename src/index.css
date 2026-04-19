@@ -904,36 +904,46 @@ button:focus-visible {
 /*----------------------------------------------------------------------------*/
 
 /* about me */
+/* about me */
 #about {
   background-color: #253E77;
   color: #FFFFFF;
   min-height: 100vh;
   width: 100%;
+  
   display: flex;
-  align-items: center; /* Centers content vertically */
+  /* 1. Changed to flex-start to allow manual height control */
+  align-items: flex-start; 
   justify-content: center;
-  padding: 100px 5%;
+  
+  /* 2. Reduced 100px to 6vh to move the photo/text HIGHER on the page */
+  padding: 6vh 5% 100px 5%; 
+  
   box-sizing: border-box;
   scroll-margin-top: 70px;
+  
+  /* 3. REMOVED the lily background entirely */
+  background-image: none !important; 
 }
 
 .about-container {
   display: flex;
   align-items: center;
-  gap: 50px; /* Space between photo and text */
+  /* 4. Increased gap to 80px to shift the text further to the right */
+  gap: 80px; 
   max-width: 1100px;
   width: 100%;
+  /* 5. Nudge the whole container slightly higher */
+  margin-top: 10vh; 
 }
 
 .about-photo {
   width: 350px;
   height: 450px;
   object-fit: cover;
-  border: 4px solid #ffafdb; /* Pink pixel border */
+  border: 4px solid #ffafdb;
   border-radius: 15px;
-  box-shadow: 10px 10px 0px #526798; /* Retro offset shadow */
-  /* Optional: gives it a slightly sharp/digital look to match the fonts */
-  image-rendering: auto; 
+  box-shadow: 10px 10px 0px #526798;
 }
 
 .about-text {
@@ -941,27 +951,22 @@ button:focus-visible {
   text-align: left;
 }
 
-#about .section-content {
-  max-width: 900px;
-  /* Adjust this percentage to line up with your Header text */
-  margin-left: 8%; 
-  padding: 1rem 2rem;
-  
-  /* aligns the lines of text to left*/
-  text-align: left; 
-}
-
-/* Force the headers to align left as well */
-#about h1, #about h2 {
-  color: #FFFFFF !important;
-  margin-top: 0; /* Prevents the heading from pushing the section down */
-  padding-top: 8rem; /* Use padding instead to create space */
-  text-align: left;
-  width: 100%;
-}
-
+/* 6. Cleaned up the header specifically for this section */
 #about h1 {
-  font-size: 3rem;
+  font-family: 'Dotemp', monospace !important;
+  color: #FFFFFF !important;
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-top: 0; /* Removed that big 8rem padding */
+}
+
+#about h3 {
+  font-family: 'VT323', monospace !important;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: #FFFFFF;
+  text-indent: 0;
 }
 
 /*----------------------------------------------------------------------------*/
