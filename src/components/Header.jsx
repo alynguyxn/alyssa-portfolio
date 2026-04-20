@@ -9,7 +9,7 @@ function Header() {
       <div className="typing-container">
         <h1 className="typing-text">alyssa nguyen</h1>
       </div>
-      <h2>web development</h2>
+      <h2>computer science</h2>
     </header>
   );
 }
